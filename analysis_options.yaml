@@ -1,0 +1,20 @@
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    sort_pub_dependencies: false
+    depend_on_referenced_packages: false
+
+analyzer:
+  errors:
+    missing_required_param: error
+    missing_return: error
+    must_be_immutable: error
+    sort_unnamed_constructors_first: ignore
+    invalid_annotation_target: ignore
+  exclude:
+    - test/generated/**
+    - lib/**.freezed.dart
+    - lib/**.g.dart
+    # - lib/**.gr.dart
+    # - lib/**.config.dart
