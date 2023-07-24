@@ -13,10 +13,21 @@ import 'package:connectivity_plus/connectivity_plus.dart' as _i7;
 import 'package:dio/dio.dart' as _i4;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
+import 'package:shared_preferences/shared_preferences.dart' as _i10;
+import 'package:untitled_skeleton/application/product/actor/product_actor_bloc.dart'
+    as _i13;
+import 'package:untitled_skeleton/application/product/form/product_form_bloc.dart'
+    as _i14;
 import 'package:untitled_skeleton/common/api/api_client.dart' as _i8;
-import 'package:untitled_skeleton/common/di/auto_route_di.dart' as _i9;
-import 'package:untitled_skeleton/common/di/dio_di.dart' as _i10;
+import 'package:untitled_skeleton/common/di/auto_route_di.dart' as _i15;
+import 'package:untitled_skeleton/common/di/dio_di.dart' as _i16;
 import 'package:untitled_skeleton/common/network/network_client.dart' as _i6;
+import 'package:untitled_skeleton/domain/product/i_product_repository.dart'
+    as _i11;
+import 'package:untitled_skeleton/domain/product/infrastructure/data_source/remote_data_provider.dart'
+    as _i9;
+import 'package:untitled_skeleton/domain/product/infrastructure/product_repository.dart'
+    as _i12;
 import 'package:untitled_skeleton/env.dart' as _i5;
 import 'package:untitled_skeleton/presentation/routes/router.dart' as _i3;
 
@@ -52,10 +63,26 @@ extension GetItInjectableX on _i1.GetIt {
           gh<_i5.Env>(),
           gh<_i4.Dio>(),
         ));
+    gh.factory<_i9.ProductRemoteDataProvider>(
+        () => _i9.ProductRemoteDataProvider(
+              gh<_i8.ApiClient>(),
+              gh<_i5.Env>(),
+              gh<_i10.SharedPreferences>(),
+            ));
+    gh.factory<_i11.IProductRepository>(() => _i12.ProductRepository(
+          gh<_i10.SharedPreferences>(),
+          gh<_i9.ProductRemoteDataProvider>(),
+        ));
+    gh.factory<_i13.ProductActorBloc>(
+        () => _i13.ProductActorBloc(gh<_i11.IProductRepository>()));
+    gh.factory<_i14.ProductFormBloc>(() => _i14.ProductFormBloc(
+          gh<_i11.IProductRepository>(),
+          gh<_i10.SharedPreferences>(),
+        ));
     return this;
   }
 }
 
-class _$AutoRouteDi extends _i9.AutoRouteDi {}
+class _$AutoRouteDi extends _i15.AutoRouteDi {}
 
-class _$DioDi extends _i10.DioDi {}
+class _$DioDi extends _i16.DioDi {}
