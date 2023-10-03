@@ -9,7 +9,7 @@ abstract class Env {
 @dev
 class DevEnv implements Env {
   @override
-  String get baseUrl => 'https://dev.example.com/api/v1';
+  String get baseUrl => 'https://ibnux.github.io/BMKG-importer/cuaca/';
 
   @override
   String get tokenKey => 'v0x37KYbJqLodL0363Xa6jxaRTTN2eD1';
@@ -19,7 +19,7 @@ class DevEnv implements Env {
 @prod
 class ProdEnv implements Env {
   @override
-  String get baseUrl => 'https://dev.example.com/api/v1';
+  String get baseUrl => 'https://ibnux.github.io/BMKG-importer/cuaca/';
 
   @override
   String get tokenKey => 'v0x37KYbJqLodL0363Xa6jxaRTTN2eD1';

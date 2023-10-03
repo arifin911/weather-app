@@ -16,5 +16,5 @@ analyzer:
     - test/generated/**
     - lib/**.freezed.dart
     - lib/**.g.dart
-    # - lib/**.gr.dart
-    # - lib/**.config.dart
+    - lib/**.gr.dart
+    - lib/**.config.dart

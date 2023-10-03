@@ -35,7 +35,6 @@ mixin _$ProductFormEvent {
     required TResult Function(String categoryId) categoryChanged,
     required TResult Function(String unitId) unitChanged,
     required TResult Function(String brandId) brandChanged,
-    required TResult Function(BusinessType type) businessTypeChanged,
     required TResult Function() submit,
   }) =>
       throw _privateConstructorUsedError;
@@ -57,7 +56,6 @@ mixin _$ProductFormEvent {
     TResult? Function(String categoryId)? categoryChanged,
     TResult? Function(String unitId)? unitChanged,
     TResult? Function(String brandId)? brandChanged,
-    TResult? Function(BusinessType type)? businessTypeChanged,
     TResult? Function()? submit,
   }) =>
       throw _privateConstructorUsedError;
@@ -79,7 +77,6 @@ mixin _$ProductFormEvent {
     TResult Function(String categoryId)? categoryChanged,
     TResult Function(String unitId)? unitChanged,
     TResult Function(String brandId)? brandChanged,
-    TResult Function(BusinessType type)? businessTypeChanged,
     TResult Function()? submit,
     required TResult orElse(),
   }) =>
@@ -102,7 +99,6 @@ mixin _$ProductFormEvent {
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_BrandChanged value) brandChanged,
-    required TResult Function(_BusinessTypeChanged value) businessTypeChanged,
     required TResult Function(_Submit value) submit,
   }) =>
       throw _privateConstructorUsedError;
@@ -124,7 +120,6 @@ mixin _$ProductFormEvent {
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_BrandChanged value)? brandChanged,
-    TResult? Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult? Function(_Submit value)? submit,
   }) =>
       throw _privateConstructorUsedError;
@@ -146,7 +141,6 @@ mixin _$ProductFormEvent {
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_BrandChanged value)? brandChanged,
-    TResult Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult Function(_Submit value)? submit,
     required TResult orElse(),
   }) =>
@@ -273,7 +267,6 @@ class _$_Initialized implements _Initialized {
     required TResult Function(String categoryId) categoryChanged,
     required TResult Function(String unitId) unitChanged,
     required TResult Function(String brandId) brandChanged,
-    required TResult Function(BusinessType type) businessTypeChanged,
     required TResult Function() submit,
   }) {
     return initialized(initialProduct, isEditing);
@@ -298,7 +291,6 @@ class _$_Initialized implements _Initialized {
     TResult? Function(String categoryId)? categoryChanged,
     TResult? Function(String unitId)? unitChanged,
     TResult? Function(String brandId)? brandChanged,
-    TResult? Function(BusinessType type)? businessTypeChanged,
     TResult? Function()? submit,
   }) {
     return initialized?.call(initialProduct, isEditing);
@@ -323,7 +315,6 @@ class _$_Initialized implements _Initialized {
     TResult Function(String categoryId)? categoryChanged,
     TResult Function(String unitId)? unitChanged,
     TResult Function(String brandId)? brandChanged,
-    TResult Function(BusinessType type)? businessTypeChanged,
     TResult Function()? submit,
     required TResult orElse(),
   }) {
@@ -352,7 +343,6 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_BrandChanged value) brandChanged,
-    required TResult Function(_BusinessTypeChanged value) businessTypeChanged,
     required TResult Function(_Submit value) submit,
   }) {
     return initialized(this);
@@ -377,7 +367,6 @@ class _$_Initialized implements _Initialized {
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_BrandChanged value)? brandChanged,
-    TResult? Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult? Function(_Submit value)? submit,
   }) {
     return initialized?.call(this);
@@ -402,7 +391,6 @@ class _$_Initialized implements _Initialized {
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_BrandChanged value)? brandChanged,
-    TResult Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult Function(_Submit value)? submit,
     required TResult orElse(),
   }) {
@@ -506,7 +494,6 @@ class _$_ImagePathChanged implements _ImagePathChanged {
     required TResult Function(String categoryId) categoryChanged,
     required TResult Function(String unitId) unitChanged,
     required TResult Function(String brandId) brandChanged,
-    required TResult Function(BusinessType type) businessTypeChanged,
     required TResult Function() submit,
   }) {
     return imagePathChanged(file);
@@ -531,7 +518,6 @@ class _$_ImagePathChanged implements _ImagePathChanged {
     TResult? Function(String categoryId)? categoryChanged,
     TResult? Function(String unitId)? unitChanged,
     TResult? Function(String brandId)? brandChanged,
-    TResult? Function(BusinessType type)? businessTypeChanged,
     TResult? Function()? submit,
   }) {
     return imagePathChanged?.call(file);
@@ -556,7 +542,6 @@ class _$_ImagePathChanged implements _ImagePathChanged {
     TResult Function(String categoryId)? categoryChanged,
     TResult Function(String unitId)? unitChanged,
     TResult Function(String brandId)? brandChanged,
-    TResult Function(BusinessType type)? businessTypeChanged,
     TResult Function()? submit,
     required TResult orElse(),
   }) {
@@ -585,7 +570,6 @@ class _$_ImagePathChanged implements _ImagePathChanged {
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_BrandChanged value) brandChanged,
-    required TResult Function(_BusinessTypeChanged value) businessTypeChanged,
     required TResult Function(_Submit value) submit,
   }) {
     return imagePathChanged(this);
@@ -610,7 +594,6 @@ class _$_ImagePathChanged implements _ImagePathChanged {
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_BrandChanged value)? brandChanged,
-    TResult? Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult? Function(_Submit value)? submit,
   }) {
     return imagePathChanged?.call(this);
@@ -635,7 +618,6 @@ class _$_ImagePathChanged implements _ImagePathChanged {
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_BrandChanged value)? brandChanged,
-    TResult Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult Function(_Submit value)? submit,
     required TResult orElse(),
   }) {
@@ -736,7 +718,6 @@ class _$_NameChanged implements _NameChanged {
     required TResult Function(String categoryId) categoryChanged,
     required TResult Function(String unitId) unitChanged,
     required TResult Function(String brandId) brandChanged,
-    required TResult Function(BusinessType type) businessTypeChanged,
     required TResult Function() submit,
   }) {
     return nameChanged(name);
@@ -761,7 +742,6 @@ class _$_NameChanged implements _NameChanged {
     TResult? Function(String categoryId)? categoryChanged,
     TResult? Function(String unitId)? unitChanged,
     TResult? Function(String brandId)? brandChanged,
-    TResult? Function(BusinessType type)? businessTypeChanged,
     TResult? Function()? submit,
   }) {
     return nameChanged?.call(name);
@@ -786,7 +766,6 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(String categoryId)? categoryChanged,
     TResult Function(String unitId)? unitChanged,
     TResult Function(String brandId)? brandChanged,
-    TResult Function(BusinessType type)? businessTypeChanged,
     TResult Function()? submit,
     required TResult orElse(),
   }) {
@@ -815,7 +794,6 @@ class _$_NameChanged implements _NameChanged {
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_BrandChanged value) brandChanged,
-    required TResult Function(_BusinessTypeChanged value) businessTypeChanged,
     required TResult Function(_Submit value) submit,
   }) {
     return nameChanged(this);
@@ -840,7 +818,6 @@ class _$_NameChanged implements _NameChanged {
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_BrandChanged value)? brandChanged,
-    TResult? Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult? Function(_Submit value)? submit,
   }) {
     return nameChanged?.call(this);
@@ -865,7 +842,6 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_BrandChanged value)? brandChanged,
-    TResult Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult Function(_Submit value)? submit,
     required TResult orElse(),
   }) {
@@ -968,7 +944,6 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     required TResult Function(String categoryId) categoryChanged,
     required TResult Function(String unitId) unitChanged,
     required TResult Function(String brandId) brandChanged,
-    required TResult Function(BusinessType type) businessTypeChanged,
     required TResult Function() submit,
   }) {
     return descriptionChanged(description);
@@ -993,7 +968,6 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     TResult? Function(String categoryId)? categoryChanged,
     TResult? Function(String unitId)? unitChanged,
     TResult? Function(String brandId)? brandChanged,
-    TResult? Function(BusinessType type)? businessTypeChanged,
     TResult? Function()? submit,
   }) {
     return descriptionChanged?.call(description);
@@ -1018,7 +992,6 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     TResult Function(String categoryId)? categoryChanged,
     TResult Function(String unitId)? unitChanged,
     TResult Function(String brandId)? brandChanged,
-    TResult Function(BusinessType type)? businessTypeChanged,
     TResult Function()? submit,
     required TResult orElse(),
   }) {
@@ -1047,7 +1020,6 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_BrandChanged value) brandChanged,
-    required TResult Function(_BusinessTypeChanged value) businessTypeChanged,
     required TResult Function(_Submit value) submit,
   }) {
     return descriptionChanged(this);
@@ -1072,7 +1044,6 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_BrandChanged value)? brandChanged,
-    TResult? Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult? Function(_Submit value)? submit,
   }) {
     return descriptionChanged?.call(this);
@@ -1097,7 +1068,6 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_BrandChanged value)? brandChanged,
-    TResult Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult Function(_Submit value)? submit,
     required TResult orElse(),
   }) {
@@ -1199,7 +1169,6 @@ class _$_WeightChanged implements _WeightChanged {
     required TResult Function(String categoryId) categoryChanged,
     required TResult Function(String unitId) unitChanged,
     required TResult Function(String brandId) brandChanged,
-    required TResult Function(BusinessType type) businessTypeChanged,
     required TResult Function() submit,
   }) {
     return weightChanged(weight);
@@ -1224,7 +1193,6 @@ class _$_WeightChanged implements _WeightChanged {
     TResult? Function(String categoryId)? categoryChanged,
     TResult? Function(String unitId)? unitChanged,
     TResult? Function(String brandId)? brandChanged,
-    TResult? Function(BusinessType type)? businessTypeChanged,
     TResult? Function()? submit,
   }) {
     return weightChanged?.call(weight);
@@ -1249,7 +1217,6 @@ class _$_WeightChanged implements _WeightChanged {
     TResult Function(String categoryId)? categoryChanged,
     TResult Function(String unitId)? unitChanged,
     TResult Function(String brandId)? brandChanged,
-    TResult Function(BusinessType type)? businessTypeChanged,
     TResult Function()? submit,
     required TResult orElse(),
   }) {
@@ -1278,7 +1245,6 @@ class _$_WeightChanged implements _WeightChanged {
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_BrandChanged value) brandChanged,
-    required TResult Function(_BusinessTypeChanged value) businessTypeChanged,
     required TResult Function(_Submit value) submit,
   }) {
     return weightChanged(this);
@@ -1303,7 +1269,6 @@ class _$_WeightChanged implements _WeightChanged {
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_BrandChanged value)? brandChanged,
-    TResult? Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult? Function(_Submit value)? submit,
   }) {
     return weightChanged?.call(this);
@@ -1328,7 +1293,6 @@ class _$_WeightChanged implements _WeightChanged {
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_BrandChanged value)? brandChanged,
-    TResult Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult Function(_Submit value)? submit,
     required TResult orElse(),
   }) {
@@ -1430,7 +1394,6 @@ class _$_PurchaseChanged implements _PurchaseChanged {
     required TResult Function(String categoryId) categoryChanged,
     required TResult Function(String unitId) unitChanged,
     required TResult Function(String brandId) brandChanged,
-    required TResult Function(BusinessType type) businessTypeChanged,
     required TResult Function() submit,
   }) {
     return purchaseChanged(purchase);
@@ -1455,7 +1418,6 @@ class _$_PurchaseChanged implements _PurchaseChanged {
     TResult? Function(String categoryId)? categoryChanged,
     TResult? Function(String unitId)? unitChanged,
     TResult? Function(String brandId)? brandChanged,
-    TResult? Function(BusinessType type)? businessTypeChanged,
     TResult? Function()? submit,
   }) {
     return purchaseChanged?.call(purchase);
@@ -1480,7 +1442,6 @@ class _$_PurchaseChanged implements _PurchaseChanged {
     TResult Function(String categoryId)? categoryChanged,
     TResult Function(String unitId)? unitChanged,
     TResult Function(String brandId)? brandChanged,
-    TResult Function(BusinessType type)? businessTypeChanged,
     TResult Function()? submit,
     required TResult orElse(),
   }) {
@@ -1509,7 +1470,6 @@ class _$_PurchaseChanged implements _PurchaseChanged {
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_BrandChanged value) brandChanged,
-    required TResult Function(_BusinessTypeChanged value) businessTypeChanged,
     required TResult Function(_Submit value) submit,
   }) {
     return purchaseChanged(this);
@@ -1534,7 +1494,6 @@ class _$_PurchaseChanged implements _PurchaseChanged {
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_BrandChanged value)? brandChanged,
-    TResult? Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult? Function(_Submit value)? submit,
   }) {
     return purchaseChanged?.call(this);
@@ -1559,7 +1518,6 @@ class _$_PurchaseChanged implements _PurchaseChanged {
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_BrandChanged value)? brandChanged,
-    TResult Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult Function(_Submit value)? submit,
     required TResult orElse(),
   }) {
@@ -1660,7 +1618,6 @@ class _$_SellingChanged implements _SellingChanged {
     required TResult Function(String categoryId) categoryChanged,
     required TResult Function(String unitId) unitChanged,
     required TResult Function(String brandId) brandChanged,
-    required TResult Function(BusinessType type) businessTypeChanged,
     required TResult Function() submit,
   }) {
     return sellingChanged(selling);
@@ -1685,7 +1642,6 @@ class _$_SellingChanged implements _SellingChanged {
     TResult? Function(String categoryId)? categoryChanged,
     TResult? Function(String unitId)? unitChanged,
     TResult? Function(String brandId)? brandChanged,
-    TResult? Function(BusinessType type)? businessTypeChanged,
     TResult? Function()? submit,
   }) {
     return sellingChanged?.call(selling);
@@ -1710,7 +1666,6 @@ class _$_SellingChanged implements _SellingChanged {
     TResult Function(String categoryId)? categoryChanged,
     TResult Function(String unitId)? unitChanged,
     TResult Function(String brandId)? brandChanged,
-    TResult Function(BusinessType type)? businessTypeChanged,
     TResult Function()? submit,
     required TResult orElse(),
   }) {
@@ -1739,7 +1694,6 @@ class _$_SellingChanged implements _SellingChanged {
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_BrandChanged value) brandChanged,
-    required TResult Function(_BusinessTypeChanged value) businessTypeChanged,
     required TResult Function(_Submit value) submit,
   }) {
     return sellingChanged(this);
@@ -1764,7 +1718,6 @@ class _$_SellingChanged implements _SellingChanged {
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_BrandChanged value)? brandChanged,
-    TResult? Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult? Function(_Submit value)? submit,
   }) {
     return sellingChanged?.call(this);
@@ -1789,7 +1742,6 @@ class _$_SellingChanged implements _SellingChanged {
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_BrandChanged value)? brandChanged,
-    TResult Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult Function(_Submit value)? submit,
     required TResult orElse(),
   }) {
@@ -1893,7 +1845,6 @@ class _$_EnableStockChanged implements _EnableStockChanged {
     required TResult Function(String categoryId) categoryChanged,
     required TResult Function(String unitId) unitChanged,
     required TResult Function(String brandId) brandChanged,
-    required TResult Function(BusinessType type) businessTypeChanged,
     required TResult Function() submit,
   }) {
     return isEnableOpeningStock(this.isEnableOpeningStock);
@@ -1918,7 +1869,6 @@ class _$_EnableStockChanged implements _EnableStockChanged {
     TResult? Function(String categoryId)? categoryChanged,
     TResult? Function(String unitId)? unitChanged,
     TResult? Function(String brandId)? brandChanged,
-    TResult? Function(BusinessType type)? businessTypeChanged,
     TResult? Function()? submit,
   }) {
     return isEnableOpeningStock?.call(this.isEnableOpeningStock);
@@ -1943,7 +1893,6 @@ class _$_EnableStockChanged implements _EnableStockChanged {
     TResult Function(String categoryId)? categoryChanged,
     TResult Function(String unitId)? unitChanged,
     TResult Function(String brandId)? brandChanged,
-    TResult Function(BusinessType type)? businessTypeChanged,
     TResult Function()? submit,
     required TResult orElse(),
   }) {
@@ -1972,7 +1921,6 @@ class _$_EnableStockChanged implements _EnableStockChanged {
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_BrandChanged value) brandChanged,
-    required TResult Function(_BusinessTypeChanged value) businessTypeChanged,
     required TResult Function(_Submit value) submit,
   }) {
     return isEnableOpeningStock(this);
@@ -1997,7 +1945,6 @@ class _$_EnableStockChanged implements _EnableStockChanged {
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_BrandChanged value)? brandChanged,
-    TResult? Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult? Function(_Submit value)? submit,
   }) {
     return isEnableOpeningStock?.call(this);
@@ -2022,7 +1969,6 @@ class _$_EnableStockChanged implements _EnableStockChanged {
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_BrandChanged value)? brandChanged,
-    TResult Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult Function(_Submit value)? submit,
     required TResult orElse(),
   }) {
@@ -2124,7 +2070,6 @@ class _$_StockChanged implements _StockChanged {
     required TResult Function(String categoryId) categoryChanged,
     required TResult Function(String unitId) unitChanged,
     required TResult Function(String brandId) brandChanged,
-    required TResult Function(BusinessType type) businessTypeChanged,
     required TResult Function() submit,
   }) {
     return stockChanged(stock);
@@ -2149,7 +2094,6 @@ class _$_StockChanged implements _StockChanged {
     TResult? Function(String categoryId)? categoryChanged,
     TResult? Function(String unitId)? unitChanged,
     TResult? Function(String brandId)? brandChanged,
-    TResult? Function(BusinessType type)? businessTypeChanged,
     TResult? Function()? submit,
   }) {
     return stockChanged?.call(stock);
@@ -2174,7 +2118,6 @@ class _$_StockChanged implements _StockChanged {
     TResult Function(String categoryId)? categoryChanged,
     TResult Function(String unitId)? unitChanged,
     TResult Function(String brandId)? brandChanged,
-    TResult Function(BusinessType type)? businessTypeChanged,
     TResult Function()? submit,
     required TResult orElse(),
   }) {
@@ -2203,7 +2146,6 @@ class _$_StockChanged implements _StockChanged {
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_BrandChanged value) brandChanged,
-    required TResult Function(_BusinessTypeChanged value) businessTypeChanged,
     required TResult Function(_Submit value) submit,
   }) {
     return stockChanged(this);
@@ -2228,7 +2170,6 @@ class _$_StockChanged implements _StockChanged {
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_BrandChanged value)? brandChanged,
-    TResult? Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult? Function(_Submit value)? submit,
   }) {
     return stockChanged?.call(this);
@@ -2253,7 +2194,6 @@ class _$_StockChanged implements _StockChanged {
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_BrandChanged value)? brandChanged,
-    TResult Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult Function(_Submit value)? submit,
     required TResult orElse(),
   }) {
@@ -2354,7 +2294,6 @@ class _$_StatusChanged implements _StatusChanged {
     required TResult Function(String categoryId) categoryChanged,
     required TResult Function(String unitId) unitChanged,
     required TResult Function(String brandId) brandChanged,
-    required TResult Function(BusinessType type) businessTypeChanged,
     required TResult Function() submit,
   }) {
     return statusChanged(status);
@@ -2379,7 +2318,6 @@ class _$_StatusChanged implements _StatusChanged {
     TResult? Function(String categoryId)? categoryChanged,
     TResult? Function(String unitId)? unitChanged,
     TResult? Function(String brandId)? brandChanged,
-    TResult? Function(BusinessType type)? businessTypeChanged,
     TResult? Function()? submit,
   }) {
     return statusChanged?.call(status);
@@ -2404,7 +2342,6 @@ class _$_StatusChanged implements _StatusChanged {
     TResult Function(String categoryId)? categoryChanged,
     TResult Function(String unitId)? unitChanged,
     TResult Function(String brandId)? brandChanged,
-    TResult Function(BusinessType type)? businessTypeChanged,
     TResult Function()? submit,
     required TResult orElse(),
   }) {
@@ -2433,7 +2370,6 @@ class _$_StatusChanged implements _StatusChanged {
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_BrandChanged value) brandChanged,
-    required TResult Function(_BusinessTypeChanged value) businessTypeChanged,
     required TResult Function(_Submit value) submit,
   }) {
     return statusChanged(this);
@@ -2458,7 +2394,6 @@ class _$_StatusChanged implements _StatusChanged {
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_BrandChanged value)? brandChanged,
-    TResult? Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult? Function(_Submit value)? submit,
   }) {
     return statusChanged?.call(this);
@@ -2483,7 +2418,6 @@ class _$_StatusChanged implements _StatusChanged {
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_BrandChanged value)? brandChanged,
-    TResult Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult Function(_Submit value)? submit,
     required TResult orElse(),
   }) {
@@ -2584,7 +2518,6 @@ class _$_SlotChanged implements _SlotChanged {
     required TResult Function(String categoryId) categoryChanged,
     required TResult Function(String unitId) unitChanged,
     required TResult Function(String brandId) brandChanged,
-    required TResult Function(BusinessType type) businessTypeChanged,
     required TResult Function() submit,
   }) {
     return slotChanged(slot);
@@ -2609,7 +2542,6 @@ class _$_SlotChanged implements _SlotChanged {
     TResult? Function(String categoryId)? categoryChanged,
     TResult? Function(String unitId)? unitChanged,
     TResult? Function(String brandId)? brandChanged,
-    TResult? Function(BusinessType type)? businessTypeChanged,
     TResult? Function()? submit,
   }) {
     return slotChanged?.call(slot);
@@ -2634,7 +2566,6 @@ class _$_SlotChanged implements _SlotChanged {
     TResult Function(String categoryId)? categoryChanged,
     TResult Function(String unitId)? unitChanged,
     TResult Function(String brandId)? brandChanged,
-    TResult Function(BusinessType type)? businessTypeChanged,
     TResult Function()? submit,
     required TResult orElse(),
   }) {
@@ -2663,7 +2594,6 @@ class _$_SlotChanged implements _SlotChanged {
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_BrandChanged value) brandChanged,
-    required TResult Function(_BusinessTypeChanged value) businessTypeChanged,
     required TResult Function(_Submit value) submit,
   }) {
     return slotChanged(this);
@@ -2688,7 +2618,6 @@ class _$_SlotChanged implements _SlotChanged {
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_BrandChanged value)? brandChanged,
-    TResult? Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult? Function(_Submit value)? submit,
   }) {
     return slotChanged?.call(this);
@@ -2713,7 +2642,6 @@ class _$_SlotChanged implements _SlotChanged {
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_BrandChanged value)? brandChanged,
-    TResult Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult Function(_Submit value)? submit,
     required TResult orElse(),
   }) {
@@ -2815,7 +2743,6 @@ class _$_IsOnSlotChanged implements _IsOnSlotChanged {
     required TResult Function(String categoryId) categoryChanged,
     required TResult Function(String unitId) unitChanged,
     required TResult Function(String brandId) brandChanged,
-    required TResult Function(BusinessType type) businessTypeChanged,
     required TResult Function() submit,
   }) {
     return isProductOnSlot(isOnSlot);
@@ -2840,7 +2767,6 @@ class _$_IsOnSlotChanged implements _IsOnSlotChanged {
     TResult? Function(String categoryId)? categoryChanged,
     TResult? Function(String unitId)? unitChanged,
     TResult? Function(String brandId)? brandChanged,
-    TResult? Function(BusinessType type)? businessTypeChanged,
     TResult? Function()? submit,
   }) {
     return isProductOnSlot?.call(isOnSlot);
@@ -2865,7 +2791,6 @@ class _$_IsOnSlotChanged implements _IsOnSlotChanged {
     TResult Function(String categoryId)? categoryChanged,
     TResult Function(String unitId)? unitChanged,
     TResult Function(String brandId)? brandChanged,
-    TResult Function(BusinessType type)? businessTypeChanged,
     TResult Function()? submit,
     required TResult orElse(),
   }) {
@@ -2894,7 +2819,6 @@ class _$_IsOnSlotChanged implements _IsOnSlotChanged {
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_BrandChanged value) brandChanged,
-    required TResult Function(_BusinessTypeChanged value) businessTypeChanged,
     required TResult Function(_Submit value) submit,
   }) {
     return isProductOnSlot(this);
@@ -2919,7 +2843,6 @@ class _$_IsOnSlotChanged implements _IsOnSlotChanged {
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_BrandChanged value)? brandChanged,
-    TResult? Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult? Function(_Submit value)? submit,
   }) {
     return isProductOnSlot?.call(this);
@@ -2944,7 +2867,6 @@ class _$_IsOnSlotChanged implements _IsOnSlotChanged {
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_BrandChanged value)? brandChanged,
-    TResult Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult Function(_Submit value)? submit,
     required TResult orElse(),
   }) {
@@ -3045,7 +2967,6 @@ class _$_CodeChanged implements _CodeChanged {
     required TResult Function(String categoryId) categoryChanged,
     required TResult Function(String unitId) unitChanged,
     required TResult Function(String brandId) brandChanged,
-    required TResult Function(BusinessType type) businessTypeChanged,
     required TResult Function() submit,
   }) {
     return codeChanged(code);
@@ -3070,7 +2991,6 @@ class _$_CodeChanged implements _CodeChanged {
     TResult? Function(String categoryId)? categoryChanged,
     TResult? Function(String unitId)? unitChanged,
     TResult? Function(String brandId)? brandChanged,
-    TResult? Function(BusinessType type)? businessTypeChanged,
     TResult? Function()? submit,
   }) {
     return codeChanged?.call(code);
@@ -3095,7 +3015,6 @@ class _$_CodeChanged implements _CodeChanged {
     TResult Function(String categoryId)? categoryChanged,
     TResult Function(String unitId)? unitChanged,
     TResult Function(String brandId)? brandChanged,
-    TResult Function(BusinessType type)? businessTypeChanged,
     TResult Function()? submit,
     required TResult orElse(),
   }) {
@@ -3124,7 +3043,6 @@ class _$_CodeChanged implements _CodeChanged {
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_BrandChanged value) brandChanged,
-    required TResult Function(_BusinessTypeChanged value) businessTypeChanged,
     required TResult Function(_Submit value) submit,
   }) {
     return codeChanged(this);
@@ -3149,7 +3067,6 @@ class _$_CodeChanged implements _CodeChanged {
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_BrandChanged value)? brandChanged,
-    TResult? Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult? Function(_Submit value)? submit,
   }) {
     return codeChanged?.call(this);
@@ -3174,7 +3091,6 @@ class _$_CodeChanged implements _CodeChanged {
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_BrandChanged value)? brandChanged,
-    TResult Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult Function(_Submit value)? submit,
     required TResult orElse(),
   }) {
@@ -3276,7 +3192,6 @@ class _$_CategoryChanged implements _CategoryChanged {
     required TResult Function(String categoryId) categoryChanged,
     required TResult Function(String unitId) unitChanged,
     required TResult Function(String brandId) brandChanged,
-    required TResult Function(BusinessType type) businessTypeChanged,
     required TResult Function() submit,
   }) {
     return categoryChanged(categoryId);
@@ -3301,7 +3216,6 @@ class _$_CategoryChanged implements _CategoryChanged {
     TResult? Function(String categoryId)? categoryChanged,
     TResult? Function(String unitId)? unitChanged,
     TResult? Function(String brandId)? brandChanged,
-    TResult? Function(BusinessType type)? businessTypeChanged,
     TResult? Function()? submit,
   }) {
     return categoryChanged?.call(categoryId);
@@ -3326,7 +3240,6 @@ class _$_CategoryChanged implements _CategoryChanged {
     TResult Function(String categoryId)? categoryChanged,
     TResult Function(String unitId)? unitChanged,
     TResult Function(String brandId)? brandChanged,
-    TResult Function(BusinessType type)? businessTypeChanged,
     TResult Function()? submit,
     required TResult orElse(),
   }) {
@@ -3355,7 +3268,6 @@ class _$_CategoryChanged implements _CategoryChanged {
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_BrandChanged value) brandChanged,
-    required TResult Function(_BusinessTypeChanged value) businessTypeChanged,
     required TResult Function(_Submit value) submit,
   }) {
     return categoryChanged(this);
@@ -3380,7 +3292,6 @@ class _$_CategoryChanged implements _CategoryChanged {
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_BrandChanged value)? brandChanged,
-    TResult? Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult? Function(_Submit value)? submit,
   }) {
     return categoryChanged?.call(this);
@@ -3405,7 +3316,6 @@ class _$_CategoryChanged implements _CategoryChanged {
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_BrandChanged value)? brandChanged,
-    TResult Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult Function(_Submit value)? submit,
     required TResult orElse(),
   }) {
@@ -3506,7 +3416,6 @@ class _$_UnitChanged implements _UnitChanged {
     required TResult Function(String categoryId) categoryChanged,
     required TResult Function(String unitId) unitChanged,
     required TResult Function(String brandId) brandChanged,
-    required TResult Function(BusinessType type) businessTypeChanged,
     required TResult Function() submit,
   }) {
     return unitChanged(unitId);
@@ -3531,7 +3440,6 @@ class _$_UnitChanged implements _UnitChanged {
     TResult? Function(String categoryId)? categoryChanged,
     TResult? Function(String unitId)? unitChanged,
     TResult? Function(String brandId)? brandChanged,
-    TResult? Function(BusinessType type)? businessTypeChanged,
     TResult? Function()? submit,
   }) {
     return unitChanged?.call(unitId);
@@ -3556,7 +3464,6 @@ class _$_UnitChanged implements _UnitChanged {
     TResult Function(String categoryId)? categoryChanged,
     TResult Function(String unitId)? unitChanged,
     TResult Function(String brandId)? brandChanged,
-    TResult Function(BusinessType type)? businessTypeChanged,
     TResult Function()? submit,
     required TResult orElse(),
   }) {
@@ -3585,7 +3492,6 @@ class _$_UnitChanged implements _UnitChanged {
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_BrandChanged value) brandChanged,
-    required TResult Function(_BusinessTypeChanged value) businessTypeChanged,
     required TResult Function(_Submit value) submit,
   }) {
     return unitChanged(this);
@@ -3610,7 +3516,6 @@ class _$_UnitChanged implements _UnitChanged {
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_BrandChanged value)? brandChanged,
-    TResult? Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult? Function(_Submit value)? submit,
   }) {
     return unitChanged?.call(this);
@@ -3635,7 +3540,6 @@ class _$_UnitChanged implements _UnitChanged {
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_BrandChanged value)? brandChanged,
-    TResult Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult Function(_Submit value)? submit,
     required TResult orElse(),
   }) {
@@ -3736,7 +3640,6 @@ class _$_BrandChanged implements _BrandChanged {
     required TResult Function(String categoryId) categoryChanged,
     required TResult Function(String unitId) unitChanged,
     required TResult Function(String brandId) brandChanged,
-    required TResult Function(BusinessType type) businessTypeChanged,
     required TResult Function() submit,
   }) {
     return brandChanged(brandId);
@@ -3761,7 +3664,6 @@ class _$_BrandChanged implements _BrandChanged {
     TResult? Function(String categoryId)? categoryChanged,
     TResult? Function(String unitId)? unitChanged,
     TResult? Function(String brandId)? brandChanged,
-    TResult? Function(BusinessType type)? businessTypeChanged,
     TResult? Function()? submit,
   }) {
     return brandChanged?.call(brandId);
@@ -3786,7 +3688,6 @@ class _$_BrandChanged implements _BrandChanged {
     TResult Function(String categoryId)? categoryChanged,
     TResult Function(String unitId)? unitChanged,
     TResult Function(String brandId)? brandChanged,
-    TResult Function(BusinessType type)? businessTypeChanged,
     TResult Function()? submit,
     required TResult orElse(),
   }) {
@@ -3815,7 +3716,6 @@ class _$_BrandChanged implements _BrandChanged {
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_BrandChanged value) brandChanged,
-    required TResult Function(_BusinessTypeChanged value) businessTypeChanged,
     required TResult Function(_Submit value) submit,
   }) {
     return brandChanged(this);
@@ -3840,7 +3740,6 @@ class _$_BrandChanged implements _BrandChanged {
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_BrandChanged value)? brandChanged,
-    TResult? Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult? Function(_Submit value)? submit,
   }) {
     return brandChanged?.call(this);
@@ -3865,7 +3764,6 @@ class _$_BrandChanged implements _BrandChanged {
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_BrandChanged value)? brandChanged,
-    TResult Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult Function(_Submit value)? submit,
     required TResult orElse(),
   }) {
@@ -3882,239 +3780,6 @@ abstract class _BrandChanged implements ProductFormEvent {
   String get brandId;
   @JsonKey(ignore: true)
   _$$_BrandChangedCopyWith<_$_BrandChanged> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_BusinessTypeChangedCopyWith<$Res> {
-  factory _$$_BusinessTypeChangedCopyWith(_$_BusinessTypeChanged value,
-          $Res Function(_$_BusinessTypeChanged) then) =
-      __$$_BusinessTypeChangedCopyWithImpl<$Res>;
-  @useResult
-  $Res call({BusinessType type});
-}
-
-/// @nodoc
-class __$$_BusinessTypeChangedCopyWithImpl<$Res>
-    extends _$ProductFormEventCopyWithImpl<$Res, _$_BusinessTypeChanged>
-    implements _$$_BusinessTypeChangedCopyWith<$Res> {
-  __$$_BusinessTypeChangedCopyWithImpl(_$_BusinessTypeChanged _value,
-      $Res Function(_$_BusinessTypeChanged) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? type = freezed,
-  }) {
-    return _then(_$_BusinessTypeChanged(
-      freezed == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as BusinessType,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_BusinessTypeChanged implements _BusinessTypeChanged {
-  const _$_BusinessTypeChanged(this.type);
-
-  @override
-  final BusinessType type;
-
-  @override
-  String toString() {
-    return 'ProductFormEvent.businessTypeChanged(type: $type)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_BusinessTypeChanged &&
-            const DeepCollectionEquality().equals(other.type, type));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(type));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_BusinessTypeChangedCopyWith<_$_BusinessTypeChanged> get copyWith =>
-      __$$_BusinessTypeChangedCopyWithImpl<_$_BusinessTypeChanged>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(Product initialProduct, bool isEditing)
-        initialized,
-    required TResult Function(File file) imagePathChanged,
-    required TResult Function(String name) nameChanged,
-    required TResult Function(String description) descriptionChanged,
-    required TResult Function(String weight) weightChanged,
-    required TResult Function(String purchase) purchaseChanged,
-    required TResult Function(String selling) sellingChanged,
-    required TResult Function(bool isEnableOpeningStock) isEnableOpeningStock,
-    required TResult Function(int stock) stockChanged,
-    required TResult Function(String status) statusChanged,
-    required TResult Function(int slot) slotChanged,
-    required TResult Function(bool isOnSlot) isProductOnSlot,
-    required TResult Function(String code) codeChanged,
-    required TResult Function(String categoryId) categoryChanged,
-    required TResult Function(String unitId) unitChanged,
-    required TResult Function(String brandId) brandChanged,
-    required TResult Function(BusinessType type) businessTypeChanged,
-    required TResult Function() submit,
-  }) {
-    return businessTypeChanged(type);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Product initialProduct, bool isEditing)? initialized,
-    TResult? Function(File file)? imagePathChanged,
-    TResult? Function(String name)? nameChanged,
-    TResult? Function(String description)? descriptionChanged,
-    TResult? Function(String weight)? weightChanged,
-    TResult? Function(String purchase)? purchaseChanged,
-    TResult? Function(String selling)? sellingChanged,
-    TResult? Function(bool isEnableOpeningStock)? isEnableOpeningStock,
-    TResult? Function(int stock)? stockChanged,
-    TResult? Function(String status)? statusChanged,
-    TResult? Function(int slot)? slotChanged,
-    TResult? Function(bool isOnSlot)? isProductOnSlot,
-    TResult? Function(String code)? codeChanged,
-    TResult? Function(String categoryId)? categoryChanged,
-    TResult? Function(String unitId)? unitChanged,
-    TResult? Function(String brandId)? brandChanged,
-    TResult? Function(BusinessType type)? businessTypeChanged,
-    TResult? Function()? submit,
-  }) {
-    return businessTypeChanged?.call(type);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Product initialProduct, bool isEditing)? initialized,
-    TResult Function(File file)? imagePathChanged,
-    TResult Function(String name)? nameChanged,
-    TResult Function(String description)? descriptionChanged,
-    TResult Function(String weight)? weightChanged,
-    TResult Function(String purchase)? purchaseChanged,
-    TResult Function(String selling)? sellingChanged,
-    TResult Function(bool isEnableOpeningStock)? isEnableOpeningStock,
-    TResult Function(int stock)? stockChanged,
-    TResult Function(String status)? statusChanged,
-    TResult Function(int slot)? slotChanged,
-    TResult Function(bool isOnSlot)? isProductOnSlot,
-    TResult Function(String code)? codeChanged,
-    TResult Function(String categoryId)? categoryChanged,
-    TResult Function(String unitId)? unitChanged,
-    TResult Function(String brandId)? brandChanged,
-    TResult Function(BusinessType type)? businessTypeChanged,
-    TResult Function()? submit,
-    required TResult orElse(),
-  }) {
-    if (businessTypeChanged != null) {
-      return businessTypeChanged(type);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initialized value) initialized,
-    required TResult Function(_ImagePathChanged value) imagePathChanged,
-    required TResult Function(_NameChanged value) nameChanged,
-    required TResult Function(_DescriptionChanged value) descriptionChanged,
-    required TResult Function(_WeightChanged value) weightChanged,
-    required TResult Function(_PurchaseChanged value) purchaseChanged,
-    required TResult Function(_SellingChanged value) sellingChanged,
-    required TResult Function(_EnableStockChanged value) isEnableOpeningStock,
-    required TResult Function(_StockChanged value) stockChanged,
-    required TResult Function(_StatusChanged value) statusChanged,
-    required TResult Function(_SlotChanged value) slotChanged,
-    required TResult Function(_IsOnSlotChanged value) isProductOnSlot,
-    required TResult Function(_CodeChanged value) codeChanged,
-    required TResult Function(_CategoryChanged value) categoryChanged,
-    required TResult Function(_UnitChanged value) unitChanged,
-    required TResult Function(_BrandChanged value) brandChanged,
-    required TResult Function(_BusinessTypeChanged value) businessTypeChanged,
-    required TResult Function(_Submit value) submit,
-  }) {
-    return businessTypeChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initialized value)? initialized,
-    TResult? Function(_ImagePathChanged value)? imagePathChanged,
-    TResult? Function(_NameChanged value)? nameChanged,
-    TResult? Function(_DescriptionChanged value)? descriptionChanged,
-    TResult? Function(_WeightChanged value)? weightChanged,
-    TResult? Function(_PurchaseChanged value)? purchaseChanged,
-    TResult? Function(_SellingChanged value)? sellingChanged,
-    TResult? Function(_EnableStockChanged value)? isEnableOpeningStock,
-    TResult? Function(_StockChanged value)? stockChanged,
-    TResult? Function(_StatusChanged value)? statusChanged,
-    TResult? Function(_SlotChanged value)? slotChanged,
-    TResult? Function(_IsOnSlotChanged value)? isProductOnSlot,
-    TResult? Function(_CodeChanged value)? codeChanged,
-    TResult? Function(_CategoryChanged value)? categoryChanged,
-    TResult? Function(_UnitChanged value)? unitChanged,
-    TResult? Function(_BrandChanged value)? brandChanged,
-    TResult? Function(_BusinessTypeChanged value)? businessTypeChanged,
-    TResult? Function(_Submit value)? submit,
-  }) {
-    return businessTypeChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ImagePathChanged value)? imagePathChanged,
-    TResult Function(_NameChanged value)? nameChanged,
-    TResult Function(_DescriptionChanged value)? descriptionChanged,
-    TResult Function(_WeightChanged value)? weightChanged,
-    TResult Function(_PurchaseChanged value)? purchaseChanged,
-    TResult Function(_SellingChanged value)? sellingChanged,
-    TResult Function(_EnableStockChanged value)? isEnableOpeningStock,
-    TResult Function(_StockChanged value)? stockChanged,
-    TResult Function(_StatusChanged value)? statusChanged,
-    TResult Function(_SlotChanged value)? slotChanged,
-    TResult Function(_IsOnSlotChanged value)? isProductOnSlot,
-    TResult Function(_CodeChanged value)? codeChanged,
-    TResult Function(_CategoryChanged value)? categoryChanged,
-    TResult Function(_UnitChanged value)? unitChanged,
-    TResult Function(_BrandChanged value)? brandChanged,
-    TResult Function(_BusinessTypeChanged value)? businessTypeChanged,
-    TResult Function(_Submit value)? submit,
-    required TResult orElse(),
-  }) {
-    if (businessTypeChanged != null) {
-      return businessTypeChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _BusinessTypeChanged implements ProductFormEvent {
-  const factory _BusinessTypeChanged(final BusinessType type) =
-      _$_BusinessTypeChanged;
-
-  BusinessType get type;
-  @JsonKey(ignore: true)
-  _$$_BusinessTypeChangedCopyWith<_$_BusinessTypeChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -4171,7 +3836,6 @@ class _$_Submit implements _Submit {
     required TResult Function(String categoryId) categoryChanged,
     required TResult Function(String unitId) unitChanged,
     required TResult Function(String brandId) brandChanged,
-    required TResult Function(BusinessType type) businessTypeChanged,
     required TResult Function() submit,
   }) {
     return submit();
@@ -4196,7 +3860,6 @@ class _$_Submit implements _Submit {
     TResult? Function(String categoryId)? categoryChanged,
     TResult? Function(String unitId)? unitChanged,
     TResult? Function(String brandId)? brandChanged,
-    TResult? Function(BusinessType type)? businessTypeChanged,
     TResult? Function()? submit,
   }) {
     return submit?.call();
@@ -4221,7 +3884,6 @@ class _$_Submit implements _Submit {
     TResult Function(String categoryId)? categoryChanged,
     TResult Function(String unitId)? unitChanged,
     TResult Function(String brandId)? brandChanged,
-    TResult Function(BusinessType type)? businessTypeChanged,
     TResult Function()? submit,
     required TResult orElse(),
   }) {
@@ -4250,7 +3912,6 @@ class _$_Submit implements _Submit {
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_BrandChanged value) brandChanged,
-    required TResult Function(_BusinessTypeChanged value) businessTypeChanged,
     required TResult Function(_Submit value) submit,
   }) {
     return submit(this);
@@ -4275,7 +3936,6 @@ class _$_Submit implements _Submit {
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_BrandChanged value)? brandChanged,
-    TResult? Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult? Function(_Submit value)? submit,
   }) {
     return submit?.call(this);
@@ -4300,7 +3960,6 @@ class _$_Submit implements _Submit {
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_BrandChanged value)? brandChanged,
-    TResult Function(_BusinessTypeChanged value)? businessTypeChanged,
     TResult Function(_Submit value)? submit,
     required TResult orElse(),
   }) {

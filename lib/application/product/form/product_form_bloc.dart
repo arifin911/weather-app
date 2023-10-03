@@ -151,6 +151,7 @@ class ProductFormBloc extends Bloc<ProductFormEvent, ProductFormState> {
           ),
         );
       },
+      /*
       businessTypeChanged: (e) async {
         // emit(
         //   state.copyWith(
@@ -158,7 +159,7 @@ class ProductFormBloc extends Bloc<ProductFormEvent, ProductFormState> {
         //     failureOrSuccessOption: none(),
         //   ),
         // );
-      },
+      },*/
       isEnableOpeningStock: (e) async {
         emit(
           state.copyWith(
