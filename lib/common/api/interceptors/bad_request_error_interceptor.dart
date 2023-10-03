@@ -1,5 +1,5 @@
+import 'package:Weatherio/common/api/errors/bad_request_error.dart';
 import 'package:dio/dio.dart';
-import 'package:untitled_skeleton/common/api/errors/bad_request_error.dart';
 
 class BadRequestErrorInterceptor extends Interceptor {
   @override

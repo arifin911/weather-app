@@ -43,8 +43,17 @@ class $AssetsImagesPngGen {
   AssetGenImage get icWeather3 =>
       const AssetGenImage('assets/images/png/ic_weather_3.png');
 
+  /// File path: assets/images/png/ic_weather_4.png
+  AssetGenImage get icWeather4 =>
+      const AssetGenImage('assets/images/png/ic_weather_4.png');
+
+  /// File path: assets/images/png/ic_weather_5.png
+  AssetGenImage get icWeather5 =>
+      const AssetGenImage('assets/images/png/ic_weather_5.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [icWeather1, icWeather2, icWeather3];
+  List<AssetGenImage> get values =>
+      [icWeather1, icWeather2, icWeather3, icWeather4, icWeather5];
 }
 
 class Assets {

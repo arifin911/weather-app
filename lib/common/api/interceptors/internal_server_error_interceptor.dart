@@ -1,5 +1,5 @@
+import 'package:Weatherio/common/api/errors/internal_server_error.dart';
 import 'package:dio/dio.dart';
-import 'package:untitled_skeleton/common/api/errors/internal_server_error.dart';
 
 class InternalServerErrorInterceptor extends Interceptor {
   @override

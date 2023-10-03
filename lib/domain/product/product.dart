@@ -1,5 +1,5 @@
+import 'package:Weatherio/domain/product/value_object.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:untitled_skeleton/domain/product/value_object.dart';
 
 import '../core/value_objects.dart';
 

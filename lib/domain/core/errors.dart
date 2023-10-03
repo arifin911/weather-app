@@ -1,4 +1,4 @@
-import 'package:untitled_skeleton/domain/core/failures.dart';
+import 'failures.dart';
 
 class UnexpectedValueError extends Error {
   final ValueFailure valueFailure;

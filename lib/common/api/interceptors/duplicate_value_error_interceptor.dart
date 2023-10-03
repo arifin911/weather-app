@@ -1,5 +1,5 @@
+import 'package:Weatherio/common/api/errors/duplicate_value_error.dart';
 import 'package:dio/dio.dart';
-import 'package:untitled_skeleton/common/api/errors/duplicate_value_error.dart';
 
 class DuplicateValueErrorInterceptor extends Interceptor {
   @override

@@ -1,7 +1,7 @@
+import 'package:Weatherio/domain/product/product.dart';
+import 'package:Weatherio/domain/product/product_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:kt_dart/collection.dart';
-import 'package:untitled_skeleton/domain/product/product.dart';
-import 'package:untitled_skeleton/domain/product/product_failure.dart';
 
 abstract class IProductRepository {
   Future<Either<ProductFailure, KtList<Product>>> loadProducts(

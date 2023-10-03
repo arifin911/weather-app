@@ -1,5 +1,5 @@
+import 'package:Weatherio/common/api/errors/connection_timeout_error.dart';
 import 'package:dio/dio.dart';
-import 'package:untitled_skeleton/common/api/errors/connection_timeout_error.dart';
 
 class ConnectionTimeoutErrorInterceptor extends Interceptor {
   @override

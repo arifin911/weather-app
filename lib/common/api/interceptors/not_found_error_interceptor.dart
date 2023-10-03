@@ -1,5 +1,5 @@
+import 'package:Weatherio/common/api/errors/not_found_error.dart';
 import 'package:dio/dio.dart';
-import 'package:untitled_skeleton/common/api/errors/not_found_error.dart';
 
 class NotFoundErrorInterceptor extends Interceptor {
   @override

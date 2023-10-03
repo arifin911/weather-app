@@ -1,7 +1,7 @@
+import 'package:Weatherio/common/api/errors/unauthorized_error.dart';
+import 'package:Weatherio/config/injectable.dart';
+import 'package:Weatherio/presentation/routes/router.dart';
 import 'package:dio/dio.dart';
-import 'package:untitled_skeleton/common/api/errors/unauthorized_error.dart';
-import 'package:untitled_skeleton/config/injectable.dart';
-import 'package:untitled_skeleton/presentation/routes/router.dart';
 
 class UnauthorizedInterceptor extends Interceptor {
   final _appRouter = getIt<AppRouter>();

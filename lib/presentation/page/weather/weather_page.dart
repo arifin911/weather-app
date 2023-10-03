@@ -1,125 +1,218 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kt_dart/collection.dart';
 
-class WeatherForecast extends StatelessWidget {
+import '../../../app_functions.dart';
+import '../../../application/weather/loader/weather_loader_bloc.dart';
+import '../../../application/zone/actor/zone_actor_bloc.dart';
+import '../../../application/zone/loader/zone_loader_bloc.dart';
+import '../../../domain/weather_zone/weather.dart';
+import '../../../domain/weather_zone/zone.dart';
+
+class WeatherForecast extends StatefulWidget {
   const WeatherForecast({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    String selectedZone = 'DKI Jakarta'; // Kota default yang dipilih
+  State<WeatherForecast> createState() => _WeatherForecastState();
+}
 
-    List<String> zones = [
-      'DKI Jakarta',
-      'Bandung',
-      'Surabaya',
-      'Yogyakarta',
-      'Semarang',
-      'Denpasar',
-      'Makassar',
-      'Medan',
-      'Palembang',
-      'Tangerang',
-      // Tambahkan lebih banyak kota sesuai kebutuhan Anda
-    ];
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          DropdownButton<String>(
-            value: selectedZone,
-            onChanged: (newValue) {},
-            items: zones.map<DropdownMenuItem<String>>((String city) {
-              return DropdownMenuItem<String>(
-                value: city,
-                child: Text(city),
-              );
-            }).toList(),
-            underline: Container(),
-            style: const TextStyle(fontSize: 24, color: Colors.black),
+class _WeatherForecastState extends State<WeatherForecast> {
+  @override
+  void initState() {
+    context.read<ZoneLoaderBloc>().add(const ZoneLoaderEvent.started());
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocConsumer<ZoneLoaderBloc, ZoneLoaderState>(
+      listener: (context, state) {
+        state.maybeMap(
+          orElse: () => null,
+          loadSuccess: (r) => context
+              .read<WeatherLoaderBloc>()
+              .add(WeatherLoaderEvent.started(r.zones[0].id)),
+        );
+      },
+      builder: (context, state) {
+        return state.map(
+          initial: (_) => Container(),
+          loadInProgress: (_) => const Center(
+            child: CircularProgressIndicator(),
           ),
-          const Text(
-            "Jum'at, 31 Juli 2023",
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(top: 16.0),
-            child: Placeholder(
-              fallbackHeight: 200,
-              fallbackWidth: 100,
-            ),
-          ),
-          const SizedBox(height: 16),
-          const Text(
-            '30°C',
-            style: TextStyle(fontSize: 64),
-          ),
-          const Text(
-            'Berawan',
-            style: TextStyle(fontSize: 16),
-          ),
-          const SizedBox(height: 16),
-          const Text(
-            'Kelembaban: 60%',
-            style: TextStyle(fontSize: 18),
-          ),
-          const SizedBox(height: 16),
-          const TabBar(
-            labelColor: Colors.blueAccent,
-            labelStyle: TextStyle(color: Colors.blueAccent),
-            tabs: [
-              Tab(text: 'Hari Ini'),
-              Tab(text: 'Besok'),
-              Tab(text: 'Lusa'),
-            ],
-          ),
-          const Expanded(
-            child: TabBarView(
-              children: [
-                WeatherForecastContent(),
-                WeatherForecastContent(),
-                WeatherForecastContent(),
-              ],
-            ),
-          ),
-        ],
-      ),
+          loadFailure: (_) => const Text('Something went wrong.'),
+          loadSuccess: (zoneLoaderState) {
+            return BlocConsumer<ZoneActorBloc, ZoneActorState>(
+              listenWhen: (p, c) => p.zone != c.zone,
+              listener: (context, zoneActorState) {
+                context
+                    .read<WeatherLoaderBloc>()
+                    .add(WeatherLoaderEvent.started(zoneActorState.zone.id));
+              },
+              buildWhen: (p, c) => p.zone != c.zone,
+              builder: (context, zoneActorState) {
+                return BlocBuilder<WeatherLoaderBloc, WeatherLoaderState>(
+                  builder: (context, weatherLoaderState) {
+                    return weatherLoaderState.map(
+                        initial: (_) => Container(),
+                        loadInProgress: (_) => const Center(
+                              child: CircularProgressIndicator(),
+                            ),
+                        loadSuccess: (r) {
+                          final weathers = r.todayWeathers;
+                          final weather = getWeather(weathers);
+                          return SafeArea(
+                            child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  DropdownButton<Zone>(
+                                      underline: Container(),
+                                      style: const TextStyle(
+                                          fontSize: 14, color: Colors.black),
+                                      value: zoneActorState.zone == Zone.empty()
+                                          ? zoneLoaderState.zones[0]
+                                          : zoneActorState.zone,
+                                      items: zoneLoaderState.zones
+                                          .map((Zone zone) {
+                                        return DropdownMenuItem<Zone>(
+                                          value: zone,
+                                          child: Text(zone.provinceAndCity),
+                                        );
+                                      }).asList(),
+                                      onChanged: (value) => value != null
+                                          ? context.read<ZoneActorBloc>().add(
+                                              ZoneActorEvent.zoneChanged(value))
+                                          : null),
+                                  Text(
+                                    fullDateFormatted(weather.weatherTime),
+                                    style: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 16.0),
+                                    child: Image.network(
+                                      weather.weatherImgUrl,
+                                      width: 300,
+                                      height: 300,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 16),
+                                  Text(
+                                    '${weather.temperatureInCelcius.getOrElse('')}°C',
+                                    style: const TextStyle(fontSize: 64),
+                                  ),
+                                  Text(
+                                    weather.name.getOrElse(''),
+                                    style: const TextStyle(fontSize: 16),
+                                  ),
+                                  const SizedBox(height: 16),
+                                  Text(
+                                    'Kelembaban: ${weather.humidity.getOrElse('')}%',
+                                    style: const TextStyle(fontSize: 18),
+                                  ),
+                                  const SizedBox(height: 16),
+                                  const TabBar(
+                                    labelColor: Colors.blueAccent,
+                                    labelStyle:
+                                        TextStyle(color: Colors.blueAccent),
+                                    tabs: [
+                                      Tab(text: 'Hari Ini'),
+                                      Tab(text: 'Besok'),
+                                      Tab(text: 'Lusa'),
+                                    ],
+                                  ),
+                                  Expanded(
+                                    child: TabBarView(
+                                      children: [
+                                        WeatherForecastContent(
+                                            weathers: r.todayWeathers),
+                                        WeatherForecastContent(
+                                            weathers: r.tomorrowWeathers),
+                                        WeatherForecastContent(
+                                            weathers:
+                                                r.dafAfterTomorrowWeathers),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                        loadFailure: (_) => const Text('Something went wrong'));
+                  },
+                );
+              },
+            );
+          },
+        );
+      },
     );
   }
 }
 
 class WeatherForecastContent extends StatelessWidget {
-  const WeatherForecastContent({super.key});
+  const WeatherForecastContent({super.key, required this.weathers});
+
+  final KtList<Weather> weathers;
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      scrollDirection: Axis.horizontal, // Membuat konten horizontal scrollable
-      child: Row(
-        children: [
-          WeatherPlaceholder(),
-          WeatherPlaceholder(),
-          WeatherPlaceholder(),
-          WeatherPlaceholder(),
-        ],
-      ),
-    );
+    return weathers.isNotEmpty()
+        ? SingleChildScrollView(
+            scrollDirection:
+                Axis.horizontal, // Membuat konten horizontal scrollable
+            child: Row(
+              children: [
+                WeatherPlaceholder(
+                  weather: weathers[0],
+                ),
+                WeatherPlaceholder(
+                  weather: weathers[1],
+                ),
+                WeatherPlaceholder(
+                  weather: weathers[2],
+                ),
+                WeatherPlaceholder(
+                  weather: weathers[3],
+                ),
+              ],
+            ),
+          )
+        : const Center(
+            child: Text('Tdk ada data.'),
+          );
   }
 }
 
 class WeatherPlaceholder extends StatelessWidget {
-  const WeatherPlaceholder({super.key});
+  const WeatherPlaceholder({super.key, required this.weather});
+
+  final Weather weather;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 90,
+      decoration: BoxDecoration(
+          border: Border.all(color: Colors.blue),
+          borderRadius: const BorderRadius.all(Radius.circular(10))),
+      width: 100,
       height: double.infinity,
-      margin: const EdgeInsets.all(8),
-      color: Colors.grey[300],
-      child: const Placeholder(),
+      margin: const EdgeInsets.all(4),
+      child: Column(
+        children: [
+          const SizedBox(height: 10),
+          Text(weather.hour),
+          const SizedBox(height: 25),
+          weather.weatherSmallLogo,
+          const SizedBox(height: 20),
+          Text("${weather.temperatureInCelcius.getOrElse('')}°C")
+        ],
+      ),
     );
   }
 }

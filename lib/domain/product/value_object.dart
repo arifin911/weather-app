@@ -1,7 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:untitled_skeleton/domain/core/failures.dart';
-import 'package:untitled_skeleton/domain/core/value_objects.dart';
-import 'package:untitled_skeleton/domain/core/value_validator.dart';
+
+import '../core/failures.dart';
+import '../core/value_objects.dart';
+import '../core/value_validator.dart';
 
 class ProductName extends ValueObject<String> {
   @override

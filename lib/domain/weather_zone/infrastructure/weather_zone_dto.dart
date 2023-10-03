@@ -1,4 +1,8 @@
+import 'package:Weatherio/domain/core/value_objects.dart';
+import 'package:Weatherio/domain/weather_zone/zone.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../weather.dart';
 
 part 'weather_zone_dto.freezed.dart';
 part 'weather_zone_dto.g.dart';
@@ -18,6 +22,15 @@ class WeatherDto with _$WeatherDto {
 
   factory WeatherDto.fromJson(Map<String, dynamic> json) =>
       _$WeatherDtoFromJson(json);
+
+  Weather toDomain() => Weather(
+        weatherTime: weatherTime,
+        weatherCode: NumericId(weatherCode),
+        name: StringSingleLine(name),
+        humidity: StringSingleLine(humidity),
+        temperatureInCelcius: StringSingleLine(temperatureInCelcius),
+        temperatureInFahrenheit: StringSingleLine(temperatureInFahrenheit),
+      );
 }
 
 @freezed
@@ -35,4 +48,13 @@ class ZoneDto with _$ZoneDto {
 
   factory ZoneDto.fromJson(Map<String, dynamic> json) =>
       _$ZoneDtoFromJson(json);
+
+  Zone toDomain() => Zone(
+        id: StringSingleLine(id),
+        province: StringSingleLine(province),
+        city: StringSingleLine(city),
+        subDistrict: StringSingleLine(subDistrict),
+        latitude: StringSingleLine(latitude),
+        longitude: StringSingleLine(longitude),
+      );
 }

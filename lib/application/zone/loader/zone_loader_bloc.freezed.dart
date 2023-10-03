@@ -169,24 +169,24 @@ mixin _$ZoneLoaderState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function() loadSuccess,
-    required TResult Function() loadFailure,
+    required TResult Function(KtList<Zone> zones) loadSuccess,
+    required TResult Function(WeatherZoneFailure failure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
-    TResult? Function()? loadSuccess,
-    TResult? Function()? loadFailure,
+    TResult? Function(KtList<Zone> zones)? loadSuccess,
+    TResult? Function(WeatherZoneFailure failure)? loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function()? loadSuccess,
-    TResult Function()? loadFailure,
+    TResult Function(KtList<Zone> zones)? loadSuccess,
+    TResult Function(WeatherZoneFailure failure)? loadFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -274,8 +274,8 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function() loadSuccess,
-    required TResult Function() loadFailure,
+    required TResult Function(KtList<Zone> zones) loadSuccess,
+    required TResult Function(WeatherZoneFailure failure) loadFailure,
   }) {
     return initial();
   }
@@ -285,8 +285,8 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
-    TResult? Function()? loadSuccess,
-    TResult? Function()? loadFailure,
+    TResult? Function(KtList<Zone> zones)? loadSuccess,
+    TResult? Function(WeatherZoneFailure failure)? loadFailure,
   }) {
     return initial?.call();
   }
@@ -296,8 +296,8 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function()? loadSuccess,
-    TResult Function()? loadFailure,
+    TResult Function(KtList<Zone> zones)? loadSuccess,
+    TResult Function(WeatherZoneFailure failure)? loadFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -388,8 +388,8 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function() loadSuccess,
-    required TResult Function() loadFailure,
+    required TResult Function(KtList<Zone> zones) loadSuccess,
+    required TResult Function(WeatherZoneFailure failure) loadFailure,
   }) {
     return loadInProgress();
   }
@@ -399,8 +399,8 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
-    TResult? Function()? loadSuccess,
-    TResult? Function()? loadFailure,
+    TResult? Function(KtList<Zone> zones)? loadSuccess,
+    TResult? Function(WeatherZoneFailure failure)? loadFailure,
   }) {
     return loadInProgress?.call();
   }
@@ -410,8 +410,8 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function()? loadSuccess,
-    TResult Function()? loadFailure,
+    TResult Function(KtList<Zone> zones)? loadSuccess,
+    TResult Function(WeatherZoneFailure failure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -467,6 +467,8 @@ abstract class _$$_LoadSuccessCopyWith<$Res> {
   factory _$$_LoadSuccessCopyWith(
           _$_LoadSuccess value, $Res Function(_$_LoadSuccess) then) =
       __$$_LoadSuccessCopyWithImpl<$Res>;
+  @useResult
+  $Res call({KtList<Zone> zones});
 }
 
 /// @nodoc
@@ -476,36 +478,60 @@ class __$$_LoadSuccessCopyWithImpl<$Res>
   __$$_LoadSuccessCopyWithImpl(
       _$_LoadSuccess _value, $Res Function(_$_LoadSuccess) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? zones = null,
+  }) {
+    return _then(_$_LoadSuccess(
+      null == zones
+          ? _value.zones
+          : zones // ignore: cast_nullable_to_non_nullable
+              as KtList<Zone>,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_LoadSuccess implements _LoadSuccess {
-  const _$_LoadSuccess();
+  const _$_LoadSuccess(this.zones);
+
+  @override
+  final KtList<Zone> zones;
 
   @override
   String toString() {
-    return 'ZoneLoaderState.loadSuccess()';
+    return 'ZoneLoaderState.loadSuccess(zones: $zones)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_LoadSuccess);
+        (other.runtimeType == runtimeType &&
+            other is _$_LoadSuccess &&
+            (identical(other.zones, zones) || other.zones == zones));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, zones);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
+      __$$_LoadSuccessCopyWithImpl<_$_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function() loadSuccess,
-    required TResult Function() loadFailure,
+    required TResult Function(KtList<Zone> zones) loadSuccess,
+    required TResult Function(WeatherZoneFailure failure) loadFailure,
   }) {
-    return loadSuccess();
+    return loadSuccess(zones);
   }
 
   @override
@@ -513,10 +539,10 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
-    TResult? Function()? loadSuccess,
-    TResult? Function()? loadFailure,
+    TResult? Function(KtList<Zone> zones)? loadSuccess,
+    TResult? Function(WeatherZoneFailure failure)? loadFailure,
   }) {
-    return loadSuccess?.call();
+    return loadSuccess?.call(zones);
   }
 
   @override
@@ -524,12 +550,12 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function()? loadSuccess,
-    TResult Function()? loadFailure,
+    TResult Function(KtList<Zone> zones)? loadSuccess,
+    TResult Function(WeatherZoneFailure failure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
-      return loadSuccess();
+      return loadSuccess(zones);
     }
     return orElse();
   }
@@ -573,7 +599,12 @@ class _$_LoadSuccess implements _LoadSuccess {
 }
 
 abstract class _LoadSuccess implements ZoneLoaderState {
-  const factory _LoadSuccess() = _$_LoadSuccess;
+  const factory _LoadSuccess(final KtList<Zone> zones) = _$_LoadSuccess;
+
+  KtList<Zone> get zones;
+  @JsonKey(ignore: true)
+  _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -581,6 +612,10 @@ abstract class _$$_LoadFailureCopyWith<$Res> {
   factory _$$_LoadFailureCopyWith(
           _$_LoadFailure value, $Res Function(_$_LoadFailure) then) =
       __$$_LoadFailureCopyWithImpl<$Res>;
+  @useResult
+  $Res call({WeatherZoneFailure failure});
+
+  $WeatherZoneFailureCopyWith<$Res> get failure;
 }
 
 /// @nodoc
@@ -590,36 +625,68 @@ class __$$_LoadFailureCopyWithImpl<$Res>
   __$$_LoadFailureCopyWithImpl(
       _$_LoadFailure _value, $Res Function(_$_LoadFailure) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failure = null,
+  }) {
+    return _then(_$_LoadFailure(
+      null == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as WeatherZoneFailure,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $WeatherZoneFailureCopyWith<$Res> get failure {
+    return $WeatherZoneFailureCopyWith<$Res>(_value.failure, (value) {
+      return _then(_value.copyWith(failure: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$_LoadFailure implements _LoadFailure {
-  const _$_LoadFailure();
+  const _$_LoadFailure(this.failure);
+
+  @override
+  final WeatherZoneFailure failure;
 
   @override
   String toString() {
-    return 'ZoneLoaderState.loadFailure()';
+    return 'ZoneLoaderState.loadFailure(failure: $failure)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_LoadFailure);
+        (other.runtimeType == runtimeType &&
+            other is _$_LoadFailure &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, failure);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
+      __$$_LoadFailureCopyWithImpl<_$_LoadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function() loadSuccess,
-    required TResult Function() loadFailure,
+    required TResult Function(KtList<Zone> zones) loadSuccess,
+    required TResult Function(WeatherZoneFailure failure) loadFailure,
   }) {
-    return loadFailure();
+    return loadFailure(failure);
   }
 
   @override
@@ -627,10 +694,10 @@ class _$_LoadFailure implements _LoadFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
-    TResult? Function()? loadSuccess,
-    TResult? Function()? loadFailure,
+    TResult? Function(KtList<Zone> zones)? loadSuccess,
+    TResult? Function(WeatherZoneFailure failure)? loadFailure,
   }) {
-    return loadFailure?.call();
+    return loadFailure?.call(failure);
   }
 
   @override
@@ -638,12 +705,12 @@ class _$_LoadFailure implements _LoadFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function()? loadSuccess,
-    TResult Function()? loadFailure,
+    TResult Function(KtList<Zone> zones)? loadSuccess,
+    TResult Function(WeatherZoneFailure failure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadFailure != null) {
-      return loadFailure();
+      return loadFailure(failure);
     }
     return orElse();
   }
@@ -687,5 +754,10 @@ class _$_LoadFailure implements _LoadFailure {
 }
 
 abstract class _LoadFailure implements ZoneLoaderState {
-  const factory _LoadFailure() = _$_LoadFailure;
+  const factory _LoadFailure(final WeatherZoneFailure failure) = _$_LoadFailure;
+
+  WeatherZoneFailure get failure;
+  @JsonKey(ignore: true)
+  _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }

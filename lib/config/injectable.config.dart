@@ -8,29 +8,39 @@
 // ignore_for_file: lines_longer_than_80_chars
 // coverage:ignore-file
 
+import 'package:Weatherio/application/product/actor/product_actor_bloc.dart'
+    as _i17;
+import 'package:Weatherio/application/product/form/product_form_bloc.dart'
+    as _i18;
+import 'package:Weatherio/application/weather/loader/weather_loader_bloc.dart'
+    as _i19;
+import 'package:Weatherio/application/zone/actor/zone_actor_bloc.dart' as _i9;
+import 'package:Weatherio/application/zone/loader/zone_loader_bloc.dart'
+    as _i20;
+import 'package:Weatherio/common/api/api_client.dart' as _i10;
+import 'package:Weatherio/common/di/auto_route_di.dart' as _i21;
+import 'package:Weatherio/common/di/dio_di.dart' as _i22;
+import 'package:Weatherio/common/di/shared_preference_di.dart' as _i23;
+import 'package:Weatherio/common/network/network_client.dart' as _i6;
+import 'package:Weatherio/domain/product/i_product_repository.dart' as _i13;
+import 'package:Weatherio/domain/product/infrastructure/data_source/remote_data_provider.dart'
+    as _i11;
+import 'package:Weatherio/domain/product/infrastructure/product_repository.dart'
+    as _i14;
+import 'package:Weatherio/domain/weather_zone/i_weather_zone_repository.dart'
+    as _i15;
+import 'package:Weatherio/domain/weather_zone/infrastructure/data_source/remote_data_provider.dart'
+    as _i12;
+import 'package:Weatherio/domain/weather_zone/infrastructure/weather_zone_repository.dart'
+    as _i16;
+import 'package:Weatherio/env.dart' as _i5;
+import 'package:Weatherio/presentation/routes/router.dart' as _i3;
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:connectivity_plus/connectivity_plus.dart' as _i7;
 import 'package:dio/dio.dart' as _i4;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 import 'package:shared_preferences/shared_preferences.dart' as _i8;
-import 'package:untitled_skeleton/application/product/actor/product_actor_bloc.dart'
-    as _i13;
-import 'package:untitled_skeleton/application/product/form/product_form_bloc.dart'
-    as _i14;
-import 'package:untitled_skeleton/common/api/api_client.dart' as _i9;
-import 'package:untitled_skeleton/common/di/auto_route_di.dart' as _i15;
-import 'package:untitled_skeleton/common/di/dio_di.dart' as _i16;
-import 'package:untitled_skeleton/common/di/shared_preference_di.dart' as _i17;
-import 'package:untitled_skeleton/common/network/network_client.dart' as _i6;
-import 'package:untitled_skeleton/domain/product/i_product_repository.dart'
-    as _i11;
-import 'package:untitled_skeleton/domain/product/infrastructure/data_source/remote_data_provider.dart'
-    as _i10;
-import 'package:untitled_skeleton/domain/product/infrastructure/product_repository.dart'
-    as _i12;
-import 'package:untitled_skeleton/env.dart' as _i5;
-import 'package:untitled_skeleton/presentation/routes/router.dart' as _i3;
 
 const String _dev = 'dev';
 const String _prod = 'prod';
@@ -63,32 +73,41 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i6.NetworkClient(gh<_i7.Connectivity>()));
     gh.lazySingletonAsync<_i8.SharedPreferences>(
         () => sharedPreferencesDi.sharedPreferences);
-    gh.lazySingleton<_i9.ApiClient>(() => _i9.ApiClient(
+    gh.factory<_i9.ZoneActorBloc>(() => _i9.ZoneActorBloc());
+    gh.lazySingleton<_i10.ApiClient>(() => _i10.ApiClient(
           gh<_i4.Dio>(),
           gh<_i5.Env>(),
         ));
-    gh.factoryAsync<_i10.ProductRemoteDataProvider>(
-        () async => _i10.ProductRemoteDataProvider(
-              gh<_i9.ApiClient>(),
+    gh.factoryAsync<_i11.ProductRemoteDataProvider>(
+        () async => _i11.ProductRemoteDataProvider(
+              gh<_i10.ApiClient>(),
               gh<_i5.Env>(),
               await getAsync<_i8.SharedPreferences>(),
             ));
-    gh.factoryAsync<_i11.IProductRepository>(() async => _i12.ProductRepository(
+    gh.factory<_i12.WeatherZoneRemoteDataProvider>(
+        () => _i12.WeatherZoneRemoteDataProvider(gh<_i10.ApiClient>()));
+    gh.factoryAsync<_i13.IProductRepository>(() async => _i14.ProductRepository(
           await getAsync<_i8.SharedPreferences>(),
-          await getAsync<_i10.ProductRemoteDataProvider>(),
+          await getAsync<_i11.ProductRemoteDataProvider>(),
         ));
-    gh.factoryAsync<_i13.ProductActorBloc>(() async =>
-        _i13.ProductActorBloc(await getAsync<_i11.IProductRepository>()));
-    gh.factoryAsync<_i14.ProductFormBloc>(() async => _i14.ProductFormBloc(
-          await getAsync<_i11.IProductRepository>(),
+    gh.factory<_i15.IWeatherZoneRepository>(() =>
+        _i16.WeatherZoneRepository(gh<_i12.WeatherZoneRemoteDataProvider>()));
+    gh.factoryAsync<_i17.ProductActorBloc>(() async =>
+        _i17.ProductActorBloc(await getAsync<_i13.IProductRepository>()));
+    gh.factoryAsync<_i18.ProductFormBloc>(() async => _i18.ProductFormBloc(
+          await getAsync<_i13.IProductRepository>(),
           await getAsync<_i8.SharedPreferences>(),
         ));
+    gh.factory<_i19.WeatherLoaderBloc>(
+        () => _i19.WeatherLoaderBloc(gh<_i15.IWeatherZoneRepository>()));
+    gh.factory<_i20.ZoneLoaderBloc>(
+        () => _i20.ZoneLoaderBloc(gh<_i15.IWeatherZoneRepository>()));
     return this;
   }
 }
 
-class _$AutoRouteDi extends _i15.AutoRouteDi {}
+class _$AutoRouteDi extends _i21.AutoRouteDi {}
 
-class _$DioDi extends _i16.DioDi {}
+class _$DioDi extends _i22.DioDi {}
 
-class _$SharedPreferencesDi extends _i17.SharedPreferencesDi {}
+class _$SharedPreferencesDi extends _i23.SharedPreferencesDi {}

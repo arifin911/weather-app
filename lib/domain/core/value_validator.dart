@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:string_validator/string_validator.dart';
-import 'package:untitled_skeleton/app_constants.dart';
 
+import '../../app_constants.dart';
 import 'failures.dart';
 
 Either<ValueFailure<String>, String> validateEmailAddress(String input) {

@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
-import 'package:untitled_skeleton/domain/core/common_interface.dart';
-import 'package:untitled_skeleton/domain/core/failures.dart';
 import 'package:uuid/uuid.dart';
 
+import 'common_interface.dart';
 import 'errors.dart';
+import 'failures.dart';
 import 'value_validator.dart';
 
 @immutable

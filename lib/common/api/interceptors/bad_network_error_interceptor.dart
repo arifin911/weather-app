@@ -1,6 +1,6 @@
+import 'package:Weatherio/common/api/errors/bad_network_error.dart';
+import 'package:Weatherio/common/network/network_client.dart';
 import 'package:dio/dio.dart';
-import 'package:untitled_skeleton/common/api/errors/bad_network_error.dart';
-import 'package:untitled_skeleton/common/network/network_client.dart';
 
 import '../../../config/injectable.dart';
 
