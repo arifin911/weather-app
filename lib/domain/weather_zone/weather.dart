@@ -65,7 +65,7 @@ class Weather with _$Weather {
     }
   }
 
-  String get hour => function.hourFormat(weatherTime);
+  String get hour => function.hourFormatTwoZero(weatherTime);
 
   Widget get weatherSmallLogo {
     final code = weatherCode.getOrElse('0');

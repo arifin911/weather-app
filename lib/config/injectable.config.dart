@@ -8,6 +8,12 @@
 // ignore_for_file: lines_longer_than_80_chars
 // coverage:ignore-file
 
+// ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:connectivity_plus/connectivity_plus.dart' as _i7;
+import 'package:dio/dio.dart' as _i4;
+import 'package:get_it/get_it.dart' as _i1;
+import 'package:injectable/injectable.dart' as _i2;
+import 'package:shared_preferences/shared_preferences.dart' as _i8;
 import 'package:Weatherio/application/product/actor/product_actor_bloc.dart'
     as _i17;
 import 'package:Weatherio/application/product/form/product_form_bloc.dart'
@@ -35,12 +41,6 @@ import 'package:Weatherio/domain/weather_zone/infrastructure/weather_zone_reposi
     as _i16;
 import 'package:Weatherio/env.dart' as _i5;
 import 'package:Weatherio/presentation/routes/router.dart' as _i3;
-// ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:connectivity_plus/connectivity_plus.dart' as _i7;
-import 'package:dio/dio.dart' as _i4;
-import 'package:get_it/get_it.dart' as _i1;
-import 'package:injectable/injectable.dart' as _i2;
-import 'package:shared_preferences/shared_preferences.dart' as _i8;
 
 const String _dev = 'dev';
 const String _prod = 'prod';

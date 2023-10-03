@@ -54,10 +54,16 @@ String monthName(DateTime date) {
   }
 }
 
+String hourFormatTwoZero(DateTime time) {
+  final hh = time.hour.toString().padLeft(2, '0');
+  const mm = '00';
+  return '$hh:$mm';
+}
+
 String hourFormat(DateTime time) {
-  final jam = time.hour.toString().padLeft(2, '0'); // Format dengan 2 digit
-  const menit = '00'; // Selalu menit 00
-  return '$jam:$menit';
+  final hh = time.hour.toString().padLeft(2, '0');
+  final mm = time.minute.toString().padLeft(2, '0');
+  return '$hh:$mm';
 }
 
 String fullDateFormatted(DateTime date) {

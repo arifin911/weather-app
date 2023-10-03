@@ -8,6 +8,7 @@ import '../../../application/zone/actor/zone_actor_bloc.dart';
 import '../../../application/zone/loader/zone_loader_bloc.dart';
 import '../../../domain/weather_zone/weather.dart';
 import '../../../domain/weather_zone/zone.dart';
+import '../../../gen/assets.gen.dart';
 
 class WeatherForecast extends StatefulWidget {
   const WeatherForecast({super.key});
@@ -86,7 +87,7 @@ class _WeatherForecastState extends State<WeatherForecast> {
                                               ZoneActorEvent.zoneChanged(value))
                                           : null),
                                   Text(
-                                    fullDateFormatted(weather.weatherTime),
+                                    fullDateFormatted(DateTime.now()),
                                     style: const TextStyle(
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold,
@@ -96,14 +97,23 @@ class _WeatherForecastState extends State<WeatherForecast> {
                                     padding: const EdgeInsets.only(top: 16.0),
                                     child: Image.network(
                                       weather.weatherImgUrl,
-                                      width: 300,
-                                      height: 300,
+                                      width: 200,
+                                      height: 200,
                                     ),
                                   ),
                                   const SizedBox(height: 16),
-                                  Text(
-                                    '${weather.temperatureInCelcius.getOrElse('')}°C',
-                                    style: const TextStyle(fontSize: 64),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        '${weather.temperatureInCelcius.getOrElse('')}°C',
+                                        style: const TextStyle(fontSize: 64),
+                                      ),
+                                      Text(
+                                        ' / ${weather.temperatureInFahrenheit.getOrElse('')}°F',
+                                        style: const TextStyle(fontSize: 32),
+                                      ),
+                                    ],
                                   ),
                                   Text(
                                     weather.name.getOrElse(''),
@@ -111,18 +121,17 @@ class _WeatherForecastState extends State<WeatherForecast> {
                                   ),
                                   const SizedBox(height: 16),
                                   Text(
-                                    'Kelembaban: ${weather.humidity.getOrElse('')}%',
+                                    'Kelembaban ${weather.humidity.getOrElse('')}%',
                                     style: const TextStyle(fontSize: 18),
                                   ),
                                   const SizedBox(height: 16),
                                   const TabBar(
-                                    labelColor: Colors.blueAccent,
-                                    labelStyle:
-                                        TextStyle(color: Colors.blueAccent),
+                                    indicatorColor: Colors.black,
+                                    labelColor: Colors.black,
+                                    labelStyle: TextStyle(color: Colors.white),
                                     tabs: [
                                       Tab(text: 'Hari Ini'),
                                       Tab(text: 'Besok'),
-                                      Tab(text: 'Lusa'),
                                     ],
                                   ),
                                   Expanded(
@@ -131,10 +140,7 @@ class _WeatherForecastState extends State<WeatherForecast> {
                                         WeatherForecastContent(
                                             weathers: r.todayWeathers),
                                         WeatherForecastContent(
-                                            weathers: r.tomorrowWeathers),
-                                        WeatherForecastContent(
-                                            weathers:
-                                                r.dafAfterTomorrowWeathers),
+                                            weathers: r.tomorrowWeathers)
                                       ],
                                     ),
                                   ),
@@ -198,19 +204,29 @@ class WeatherPlaceholder extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          border: Border.all(color: Colors.blue),
+          border: Border.all(color: Colors.black),
           borderRadius: const BorderRadius.all(Radius.circular(10))),
       width: 100,
       height: double.infinity,
       margin: const EdgeInsets.all(4),
       child: Column(
         children: [
-          const SizedBox(height: 10),
+          const SizedBox(height: 60),
           Text(weather.hour),
-          const SizedBox(height: 25),
+          const SizedBox(height: 18),
           weather.weatherSmallLogo,
-          const SizedBox(height: 20),
-          Text("${weather.temperatureInCelcius.getOrElse('')}°C")
+          const SizedBox(height: 24),
+          Text("${weather.temperatureInCelcius.getOrElse('')}°C"),
+          Text("${weather.temperatureInFahrenheit.getOrElse('')}°F"),
+          const SizedBox(height: 18),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Assets.images.png.icHumidity.image(width: 20, height: 20),
+              Text(" ${weather.humidity.getOrElse('')}%"),
+            ],
+          ),
         ],
       ),
     );

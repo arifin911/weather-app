@@ -31,7 +31,9 @@ class ZoneLoaderBloc extends Bloc<ZoneLoaderEvent, ZoneLoaderState> {
 
       emit(failureOrSuccess.fold(
           (failure) => ZoneLoaderState.loadFailure(failure),
-          (zones) => ZoneLoaderState.loadSuccess(zones)));
+          (zones) => ZoneLoaderState.loadSuccess(zones.filter((e) =>
+              e.province.getOrElse('').contains("DKI") ||
+              e.province.getOrElse('').contains("Jawa")))));
     });
   }
 }

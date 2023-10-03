@@ -26,6 +26,11 @@ class Zone with _$Zone {
         longitude: StringSingleLine(''),
       );
 
-  String get provinceAndCity =>
-      "${province.getOrElse('')}, ${city.getOrElse('')}";
+  String get provinceFixed => province.getOrElse('').startsWith("DKI")
+      ? "${province.getOrElse('').substring(0, 3)} ${province.getOrElse('').substring(3)}"
+      : province.getOrElse('').replaceAllMapped(RegExp(r'([A-Z])'), (match) {
+          return ' ${match.group(0)}';
+        }).trim();
+
+  String get provinceAndCity => "$provinceFixed, ${city.getOrElse('')}";
 }

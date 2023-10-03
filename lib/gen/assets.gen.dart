@@ -12,6 +12,7 @@ import 'package:flutter/widgets.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  $AssetsImagesJpgGen get jpg => const $AssetsImagesJpgGen();
   $AssetsImagesPngGen get png => const $AssetsImagesPngGen();
 }
 
@@ -28,8 +29,23 @@ class $AssetsLanguageGen {
   List<String> get values => [en, id];
 }
 
+class $AssetsImagesJpgGen {
+  const $AssetsImagesJpgGen();
+
+  /// File path: assets/images/jpg/app_background.jpg
+  AssetGenImage get appBackground =>
+      const AssetGenImage('assets/images/jpg/app_background.jpg');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [appBackground];
+}
+
 class $AssetsImagesPngGen {
   const $AssetsImagesPngGen();
+
+  /// File path: assets/images/png/ic_humidity.png
+  AssetGenImage get icHumidity =>
+      const AssetGenImage('assets/images/png/ic_humidity.png');
 
   /// File path: assets/images/png/ic_weather_1.png
   AssetGenImage get icWeather1 =>
@@ -53,7 +69,7 @@ class $AssetsImagesPngGen {
 
   /// List of all assets
   List<AssetGenImage> get values =>
-      [icWeather1, icWeather2, icWeather3, icWeather4, icWeather5];
+      [icHumidity, icWeather1, icWeather2, icWeather3, icWeather4, icWeather5];
 }
 
 class Assets {
